@@ -73,7 +73,7 @@ module.exports = {
         let returnTrades = await getData(matchOwners)
         let playerNames = returnTrades.willGiveUp.map(playerObj =>{
             return playerObj.name
-          }).join(',')
+          }).join("\n")
         response =`${mentionedUser} is willing to trade: ${playerNames} and wants in return ${returnTrades.inExchangeFor} `
       }catch(err){
         response = 'No one available for trading'
