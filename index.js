@@ -10,6 +10,7 @@ Object.keys(botCommands).map(key => {
 });
 
 const TOKEN = process.env.TOKEN;
+
 bot.login(TOKEN);
 
 bot.on('ready', () => {
@@ -34,8 +35,8 @@ bot.on('message', msg => {
 
 //Load HTTP module
 const http = require("http");
-const hostname = '127.0.0.1';
-const port = 3000;
+const hostname = process.env.HOSTNAME;
+const port = parseInt(process.env.PORT);
 
 //Create HTTP server and listen on port 3000 for requests
 const server = http.createServer((req, res) => {
